@@ -1,0 +1,141 @@
+/* AliAds jonli fon — kirish.html dan ajratilgan umumiy qatlam */
+/* ===== ALI-BG: jonli qora-oltin fon (AliChatbot uslubida) ===== */
+.ali-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ali-bg>*{position:absolute}
+.ali-bg .bg-glow{inset:-14%;
+  background:
+    radial-gradient(820px 560px at 12% 14%,rgba(240,177,60,.24),transparent 64%),
+    radial-gradient(880px 600px at 90% 24%,rgba(255,217,122,.19),transparent 68%),
+    radial-gradient(900px 640px at 52% 104%,rgba(184,126,20,.22),transparent 70%);
+  animation:bg-drift 30s ease-in-out infinite alternate}
+.ali-bg .bg-waves{inset:0;width:100%;height:100%;opacity:1;-webkit-mask-image:radial-gradient(46% 42% at 50% 47%,transparent 0 55%,#000 88%);mask-image:radial-gradient(46% 42% at 50% 47%,transparent 0 55%,#000 88%)}
+.ali-bg .bg-waves svg{width:100%;height:100%}
+.ali-bg .bg-waves path{fill:none;stroke-linecap:round}
+.ali-bg .bg-dust,.ali-bg .bg-dust2{inset:-60% -12%;background-repeat:repeat}
+.ali-bg .bg-dust{background-size:620px 620px;
+  background-image:
+    radial-gradient(1.7px 1.7px at 12% 28%,rgba(255,217,122,.6),transparent),
+    radial-gradient(1.4px 1.4px at 74% 12%,rgba(240,177,60,.5),transparent),
+    radial-gradient(1.2px 1.2px at 32% 70%,rgba(255,244,209,.45),transparent),
+    radial-gradient(1.6px 1.6px at 60% 46%,rgba(240,177,60,.45),transparent),
+    radial-gradient(1.1px 1.1px at 88% 64%,rgba(255,217,122,.4),transparent),
+    radial-gradient(1.5px 1.5px at 8% 86%,rgba(255,255,255,.3),transparent);
+  animation:bg-rise 52s linear infinite}
+.ali-bg .bg-dust2{opacity:.5;background-size:400px 400px;
+  background-image:
+    radial-gradient(1px 1px at 22% 18%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1px 1px at 66% 60%,rgba(240,177,60,.45),transparent),
+    radial-gradient(1px 1px at 44% 86%,rgba(255,217,122,.35),transparent);
+  animation:bg-rise 84s linear infinite}
+.ali-bg .bg-orb{border-radius:50%;filter:blur(46px);opacity:.68}
+.ali-bg .orb1{width:360px;height:360px;left:5%;top:16%;background:radial-gradient(circle,rgba(240,177,60,.26),transparent 68%);animation:bg-float 22s ease-in-out infinite alternate}
+.ali-bg .orb2{width:280px;height:280px;right:7%;top:9%;background:radial-gradient(circle,rgba(255,217,122,.2),transparent 70%);animation:bg-float 28s ease-in-out infinite alternate-reverse}
+.ali-bg .orb3{width:430px;height:430px;left:40%;bottom:-10%;background:radial-gradient(circle,rgba(184,126,20,.24),transparent 72%);animation:bg-float 34s ease-in-out infinite alternate}
+.ali-bg .bg-vignette{inset:0;background:radial-gradient(125% 92% at 50% 45%,transparent 42%,rgba(4,4,5,.66) 100%)}
+@keyframes bg-drift{from{transform:translate3d(-1.6%,-1%,0) scale(1)}to{transform:translate3d(1.6%,1.4%,0) scale(1.06)}}
+@keyframes bg-rise{from{transform:translate3d(0,0,0)}to{transform:translate3d(-70px,-620px,0)}}
+@keyframes bg-float{from{transform:translate3d(0,0,0)}to{transform:translate3d(28px,-34px,0)}}
+@keyframes wave-flow{from{stroke-dashoffset:1820}to{stroke-dashoffset:0}}
+/* login yozilayotganda fon tinchiydi */
+body.ali-calm .ali-bg *{animation-play-state:paused}
+body.ali-calm .ali-bg{opacity:.6;transition:opacity .5s}
+@media(max-width:700px){.ali-bg .bg-orb{filter:blur(34px);opacity:.42}}
+@media(prefers-reduced-motion:reduce){.ali-bg *{animation:none!important}}
+/* chiziqlar bo'ylab yuguruvchi uchqun */
+.ali-bg .spark{stroke:#fff6de;stroke-width:2.6;stroke-linecap:round;stroke-dasharray:2 2600;filter:drop-shadow(0 0 6px rgba(255,219,139,.9))}
+/* ===== ZARRACHALAR: qatlam ko'paytirildi ===== */
+.ali-bg .bg-dust{background-size:420px 420px;opacity:.95}
+.ali-bg .bg-dust2{background-size:280px 280px;opacity:.7}
+.ali-bg .bg-dust3,.ali-bg .bg-dust4{position:absolute;inset:-60% -12%;background-repeat:repeat}
+.ali-bg .bg-dust3{background-size:520px 520px;opacity:.8;
+  background-image:
+    radial-gradient(2px 2px at 18% 22%,rgba(255,232,175,.75),transparent),
+    radial-gradient(1.5px 1.5px at 52% 8%,rgba(240,177,60,.6),transparent),
+    radial-gradient(1.3px 1.3px at 82% 36%,rgba(255,244,209,.55),transparent),
+    radial-gradient(1.8px 1.8px at 38% 58%,rgba(255,217,122,.6),transparent),
+    radial-gradient(1.2px 1.2px at 70% 78%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.6px 1.6px at 6% 66%,rgba(240,177,60,.55),transparent),
+    radial-gradient(1.1px 1.1px at 94% 90%,rgba(255,217,122,.45),transparent);
+  animation:bg-rise 38s linear infinite,bg-twinkle 6s ease-in-out infinite alternate}
+.ali-bg .bg-dust4{background-size:200px 200px;opacity:.45;
+  background-image:
+    radial-gradient(.9px .9px at 30% 40%,rgba(255,255,255,.35),transparent),
+    radial-gradient(.9px .9px at 76% 16%,rgba(255,217,122,.4),transparent),
+    radial-gradient(.8px .8px at 12% 80%,rgba(240,177,60,.35),transparent);
+  animation:bg-rise 110s linear infinite}
+@keyframes bg-twinkle{from{opacity:.55}to{opacity:.95}}
+/* ===== 2) YANA ZARRACHA QATLAMLARI ===== */
+.ali-bg .bg-dust5,.ali-bg .bg-dust6{position:absolute;inset:-60% -12%;background-repeat:repeat}
+.ali-bg .bg-dust5{background-size:330px 330px;opacity:.85;
+  background-image:
+    radial-gradient(2.2px 2.2px at 24% 16%,rgba(255,238,196,.8),transparent),
+    radial-gradient(1.4px 1.4px at 58% 34%,rgba(240,177,60,.6),transparent),
+    radial-gradient(1.7px 1.7px at 86% 52%,rgba(255,217,122,.65),transparent),
+    radial-gradient(1.3px 1.3px at 14% 62%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1.9px 1.9px at 46% 88%,rgba(255,232,175,.6),transparent),
+    radial-gradient(1.2px 1.2px at 74% 74%,rgba(240,177,60,.5),transparent);
+  animation:bg-rise 30s linear infinite,bg-twinkle 4.5s ease-in-out infinite alternate}
+.ali-bg .bg-dust6{background-size:640px 640px;opacity:.6;
+  background-image:
+    radial-gradient(2.6px 2.6px at 40% 24%,rgba(255,244,209,.7),transparent),
+    radial-gradient(2.2px 2.2px at 8% 48%,rgba(255,217,122,.55),transparent),
+    radial-gradient(2.4px 2.4px at 90% 18%,rgba(240,177,60,.55),transparent),
+    radial-gradient(2px 2px at 64% 92%,rgba(255,255,255,.4),transparent);
+  animation:bg-rise 64s linear infinite,bg-twinkle 9s ease-in-out infinite alternate-reverse}
+/* ===== TO'Q TILLA PALITRA (AliChatbot darajasida) ===== */
+/* fon: quyuqroq, kamroq sariq tuman */
+.ali-bg .bg-glow{background:
+  radial-gradient(760px 520px at 12% 14%,rgba(200,138,30,.22),transparent 60%),
+  radial-gradient(820px 560px at 90% 24%,rgba(168,112,22,.18),transparent 62%),
+  radial-gradient(900px 640px at 52% 106%,rgba(146,96,16,.24),transparent 66%)!important}
+.ali-bg .orb1{background:radial-gradient(circle,rgba(198,136,30,.3),transparent 66%)!important}
+.ali-bg .orb2{background:radial-gradient(circle,rgba(166,110,20,.26),transparent 68%)!important}
+.ali-bg .orb3{background:radial-gradient(circle,rgba(140,92,14,.3),transparent 70%)!important}
+.ali-bg .bg-vignette{background:radial-gradient(125% 92% at 50% 45%,transparent 38%,rgba(3,3,4,.78) 100%)!important}
+/* to'lqinlar: quyuq amber, oqarmasin */
+.ali-bg .bg-waves .wave1,.ali-bg .bg-waves .wave3{stroke:url(#wdeep)!important}
+.ali-bg .bg-waves .wave2,.ali-bg .bg-waves .wave4{stroke:url(#wdeep2)!important}
+.ali-bg .spark{stroke:#ffcf76!important;filter:drop-shadow(0 0 7px rgba(224,164,55,.85))!important}
+/* zarrachalar: to'q tilla, oq zarracha yo'q */
+.ali-bg .bg-dust{background-image:
+  radial-gradient(1.8px 1.8px at 12% 28%,rgba(224,164,55,.95),transparent),
+  radial-gradient(1.5px 1.5px at 74% 12%,rgba(200,138,30,.9),transparent),
+  radial-gradient(1.3px 1.3px at 32% 70%,rgba(240,177,60,.8),transparent),
+  radial-gradient(1.7px 1.7px at 60% 46%,rgba(198,136,30,.85),transparent),
+  radial-gradient(1.2px 1.2px at 88% 64%,rgba(224,164,55,.75),transparent),
+  radial-gradient(1.6px 1.6px at 8% 86%,rgba(170,114,24,.8),transparent)!important}
+.ali-bg .bg-dust2{background-image:
+  radial-gradient(1.1px 1.1px at 22% 18%,rgba(200,138,30,.7),transparent),
+  radial-gradient(1.1px 1.1px at 66% 60%,rgba(224,164,55,.8),transparent),
+  radial-gradient(1px 1px at 44% 86%,rgba(176,118,24,.7),transparent)!important}
+.ali-bg .bg-dust3{background-image:
+  radial-gradient(2.2px 2.2px at 18% 22%,rgba(235,175,62,.95),transparent),
+  radial-gradient(1.6px 1.6px at 52% 8%,rgba(198,136,30,.85),transparent),
+  radial-gradient(1.4px 1.4px at 82% 36%,rgba(224,164,55,.8),transparent),
+  radial-gradient(1.9px 1.9px at 38% 58%,rgba(208,146,36,.9),transparent),
+  radial-gradient(1.3px 1.3px at 70% 78%,rgba(240,177,60,.7),transparent),
+  radial-gradient(1.7px 1.7px at 6% 66%,rgba(176,118,24,.85),transparent),
+  radial-gradient(1.2px 1.2px at 94% 90%,rgba(224,164,55,.7),transparent)!important}
+.ali-bg .bg-dust4{background-image:
+  radial-gradient(1px 1px at 30% 40%,rgba(198,136,30,.6),transparent),
+  radial-gradient(1px 1px at 76% 16%,rgba(224,164,55,.65),transparent),
+  radial-gradient(.9px .9px at 12% 80%,rgba(170,114,24,.6),transparent)!important}
+.ali-bg .bg-dust5{background-image:
+  radial-gradient(2.3px 2.3px at 24% 16%,rgba(240,177,60,.95),transparent),
+  radial-gradient(1.5px 1.5px at 58% 34%,rgba(198,136,30,.85),transparent),
+  radial-gradient(1.8px 1.8px at 86% 52%,rgba(224,164,55,.9),transparent),
+  radial-gradient(1.4px 1.4px at 14% 62%,rgba(176,118,24,.75),transparent),
+  radial-gradient(2px 2px at 46% 88%,rgba(214,152,40,.9),transparent),
+  radial-gradient(1.3px 1.3px at 74% 74%,rgba(200,138,30,.8),transparent)!important}
+.ali-bg .bg-dust6{background-image:
+  radial-gradient(2.8px 2.8px at 40% 24%,rgba(235,175,62,.85),transparent),
+  radial-gradient(2.3px 2.3px at 8% 48%,rgba(198,136,30,.8),transparent),
+  radial-gradient(2.5px 2.5px at 90% 18%,rgba(224,164,55,.8),transparent),
+  radial-gradient(2.1px 2.1px at 64% 92%,rgba(176,118,24,.7),transparent)!important}
+/* yozayotganda bu detallar ham tinchiydi */
+body.ali-calm .card-beam,body.ali-calm .submit:after,body.ali-calm .login-brand:before{animation-play-state:paused}
+/* ===== FULL SHAFFOF: orqa fon hamma yerdan ko'rinib turadi, yozuvlar o'zgarmaydi ===== */
+/* to'lqinlar endi karta ortidan ham o'tadi (avval karta joyida kesilardi) */
+.ali-bg .bg-waves{
+  -webkit-mask-image:radial-gradient(46% 42% at 50% 47%,rgba(0,0,0,.6) 0 52%,#000 88%)!important;
+  mask-image:radial-gradient(46% 42% at 50% 47%,rgba(0,0,0,.6) 0 52%,#000 88%)!important}
