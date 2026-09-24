@@ -139,18 +139,3 @@ body.ali-calm .card-beam,body.ali-calm .submit:after,body.ali-calm .login-brand:
 .ali-bg .bg-waves{
   -webkit-mask-image:radial-gradient(46% 42% at 50% 47%,rgba(0,0,0,.6) 0 52%,#000 88%)!important;
   mask-image:radial-gradient(46% 42% at 50% 47%,rgba(0,0,0,.6) 0 52%,#000 88%)!important}
-
-/* ===== Zarrachalar o'rniga: reklamaga oid suzuvchi belgilar ===== */
-.ali-bg .bg-dust,.ali-bg .bg-dust2,.ali-bg .bg-dust3,
-.ali-bg .bg-dust4,.ali-bg .bg-dust5,.ali-bg .bg-dust6{display:none!important}
-.ali-bg .bg-ads{position:absolute;inset:0;overflow:hidden}
-.ali-bg .ad-ico{position:absolute;display:block;opacity:0;
-  animation:ad-rise var(--d,36s) linear var(--dl,0s) infinite,ad-glow var(--fd,10s) ease-in-out var(--dl,0s) infinite alternate}
-.ali-bg .ad-ico svg{width:100%;height:100%;fill:none;stroke:#e0a437;stroke-width:1.35;
-  stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(217,154,46,.4))}
-@keyframes ad-rise{
-  from{transform:translate3d(0,70px,0) rotate(calc(var(--rot) * -1))}
-  to{transform:translate3d(18px,-190px,0) rotate(var(--rot))}}
-@keyframes ad-glow{from{opacity:.09}to{opacity:.26}}
-@media(max-width:700px){.ali-bg .ad-ico{transform:scale(.8)}}
-@media(prefers-reduced-motion:reduce){.ali-bg .ad-ico{animation:none!important;opacity:.14}}
