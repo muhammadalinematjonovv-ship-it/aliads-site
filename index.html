@@ -450,4 +450,4 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers
   wrap.addEventListener('pointerleave',function(){wrap.style.transition='transform .6s ease';wrap.style.transform='';
     setTimeout(function(){wrap.style.transition=''},600)});
 }
-})();</script></body></html>
+})();</script></body><script>/* sahifa o'tishi bekor qilinsa konsolga xato chiqmasin */addEventListener('unhandledrejection',function(e){if(e.reason&&e.reason.name==='AbortError'&&/Transition was skipped/.test(e.reason.message||''))e.preventDefault()});</script></html>
