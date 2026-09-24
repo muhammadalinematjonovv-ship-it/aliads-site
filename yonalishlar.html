@@ -74,6 +74,63 @@ header{background:rgba(255,255,255,.004);backdrop-filter:blur(3px);-webkit-backd
 /* Karta izohlari va ulanish holati ham oppoq */
 .platform-card p,.card p{color:#fff!important}
 .connection{color:rgba(255,255,255,.82)!important}
+
+/* ===== Yozuvlarda chapdan o'ngga yuguruvchi yaltirash ===== */
+@keyframes ali-shine{0%{background-position:215% 50%}58%,100%{background-position:-75% 50%}}
+h1 em{background-image:linear-gradient(100deg,#bc872c 0%,#cc9436 16%,#ffdb8b 32%,#fff4d1 42%,#ffe9b5 50%,#d99a2e 68%,#bc872c 100%)!important;
+  background-size:270% 100%!important;background-clip:text!important;-webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;
+  animation:ali-shine 5.5s ease-in-out infinite}
+h1{background-image:linear-gradient(100deg,#e9e9f2 0%,#ffffff 36%,#ffffff 46%,#dadae6 62%,#e9e9f2 100%);
+  background-size:270% 100%;background-clip:text;-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:ali-shine 5.5s ease-in-out infinite}
+.brand b{background-image:linear-gradient(100deg,#bc872c 0%,#cc9436 16%,#ffdb8b 32%,#fff4d1 42%,#ffe9b5 50%,#d99a2e 68%,#bc872c 100%)!important;
+  background-size:270% 100%!important;background-clip:text!important;-webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;
+  animation:ali-shine 5.5s ease-in-out infinite .4s}
+
+/* ===== Karta ramkasini aylanib yuruvchi nur ===== */
+@property --beam2{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes beam2-spin{to{--beam2:360deg}}
+.platform-card::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:2;
+  background:conic-gradient(from var(--beam2),transparent 0 66%,rgba(224,164,55,.55) 78%,rgba(255,236,190,.95) 85%,rgba(224,164,55,.5) 90%,transparent 96% 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+  opacity:.8;transition:opacity .3s}
+.platform-card:hover::before{opacity:1}
+
+/* ===== Boshqa ramkalarda ham aylanuvchi nur ===== */
+.ali-chips button,.badge,.to-top,.beam-box{position:relative}
+.ali-chips button::before,.badge::before,.to-top::before,.beam-box::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:1;
+  background:conic-gradient(from var(--beam2),transparent 0 70%,rgba(224,164,55,.45) 80%,rgba(255,236,190,.85) 86%,rgba(224,164,55,.4) 91%,transparent 96% 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+  opacity:.65;transition:opacity .3s}
+.ali-chips button:hover::before,.badge:hover::before,.to-top:hover::before{opacity:1}
+.ali-chips button[aria-pressed="true"]::before{opacity:0}
+.beam-box{display:inline-block;width:300px;max-width:70%;border-radius:12px}
+.beam-box>input{width:100%!important;max-width:none!important}
+.beam-box::before{opacity:.5}
+@media(hover:hover) and (pointer:fine){
+  .ali-chips button::before{animation:beam2-spin 9s linear infinite;animation-delay:var(--bd,0s)}
+  .badge::before{animation:beam2-spin 13s linear infinite}
+  .to-top::before{animation:beam2-spin 7s linear infinite}
+  .beam-box::before{animation:beam2-spin 11s linear infinite}
+}
+@media(prefers-reduced-motion:reduce){
+  .ali-chips button::before,.badge::before,.to-top::before,.beam-box::before{animation:none!important;opacity:.3}
+}
+
+@media(hover:hover) and (pointer:fine){
+  .platform-card::before{animation:beam2-spin 8s linear infinite;animation-delay:var(--bd,0s)}
+}
+@media(prefers-reduced-motion:reduce){
+  h1,h1 em,.brand b,.platform-card::before{animation:none!important}
+  h1{-webkit-text-fill-color:#fff;color:#fff}
+}
+
 .ali-bg .bg-dust,.ali-bg .bg-dust2,.ali-bg .bg-dust3,.ali-bg .bg-dust4,.ali-bg .bg-dust5,.ali-bg .bg-dust6{display:none!important}
 
 /* Fon: chuqurlikdagi o'sish grafigi */
@@ -214,7 +271,7 @@ var grid=document.querySelector('.platform-grid'),bar=document.querySelector('.s
 if(!grid||!bar)return;
 var cards=[].slice.call(grid.querySelectorAll('.platform-card'));
 function turi(card){var n=card.dataset.platform;for(var k in GURUH)if(GURUH[k].indexOf(n)>-1)return k;return 'boshqa'}
-cards.forEach(function(c){c.dataset.turi=turi(c);
+cards.forEach(function(c,i){c.dataset.turi=turi(c);c.style.setProperty('--bd',(-i*0.37).toFixed(2)+'s');
   var sp=document.createElement('span');sp.className='card-sheen';c.appendChild(sp);
   c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();
     c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px')},{passive:true})});
@@ -233,6 +290,8 @@ NOM.forEach(function(n){
     qolla()};
   chips.appendChild(b)});
 bar.insertAdjacentElement('afterend',chips);
+chips.querySelectorAll('button').forEach(function(b,i){b.style.setProperty('--bd',(-i*0.9).toFixed(2)+'s')});
+if(search&&!search.parentNode.classList.contains('beam-box')){var bx=document.createElement('span');bx.className='beam-box';search.parentNode.insertBefore(bx,search);bx.appendChild(search)}
 
 function qolla(){
   var q=(search&&search.value||'').trim().toLowerCase(),k=0;
